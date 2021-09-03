@@ -1,4 +1,6 @@
 import { Component } from "react";
+import PropTypes from "prop-types";
+import { Label } from "./ContactForm.styled";
 
 const INITIAL_STATE = {
   name: "",
@@ -26,7 +28,7 @@ class ContactForm extends Component {
 
     return (
       <form onSubmit={this.handleSubmit}>
-        <label>
+        <Label>
           Name
           <input
             type="text"
@@ -37,9 +39,9 @@ class ContactForm extends Component {
             onChange={this.handleChange}
             value={name}
           />
-        </label>
+        </Label>
 
-        <label>
+        <Label>
           Number
           <input
             type="tel"
@@ -50,11 +52,15 @@ class ContactForm extends Component {
             onChange={this.handleChange}
             value={number}
           />
-        </label>
+        </Label>
         <input type="submit" value="Add contact" />
       </form>
     );
   }
 }
+
+ContactForm.propTypes = {
+  onSubmit: PropTypes.func,
+};
 
 export default ContactForm;

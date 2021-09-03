@@ -1,5 +1,7 @@
 import React, { Component } from "react";
+import PropTypes from "prop-types";
 
+import { StyledContact } from "./ContactItem.styled";
 class ContactItem extends Component {
   render() {
     const {
@@ -7,12 +9,21 @@ class ContactItem extends Component {
       onDelete,
     } = this.props;
     return (
-      <li>
+      <StyledContact>
         {name}: {number}
         <button onClick={() => onDelete(id)}>delete</button>
-      </li>
+      </StyledContact>
     );
   }
 }
+
+ContactItem.propTypes = {
+  contact: PropTypes.shape({
+    name: PropTypes.string,
+    number: PropTypes.string,
+    id: PropTypes.string,
+  }),
+  onDelete: PropTypes.func,
+};
 
 export default ContactItem;
