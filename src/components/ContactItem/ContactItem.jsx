@@ -4,14 +4,11 @@ import PropTypes from "prop-types";
 import { StyledContact } from "./ContactItem.styled";
 class ContactItem extends Component {
   render() {
-    const {
-      contact: { name, number, id },
-      onDelete,
-    } = this.props;
+    const { name, number, onDelete } = this.props;
     return (
       <StyledContact>
         {name}: {number}
-        <button onClick={() => onDelete(id)}>delete</button>
+        <button onClick={onDelete}>delete</button>
       </StyledContact>
     );
   }
