@@ -33,9 +33,9 @@ class App extends React.Component {
     if (contacts.find((contact) => contact.name === e.name)) {
       alert(`${e.name} is already in contacts`);
     } else {
-      this.setState({
-        contacts: [...this.state.contacts, this.createContact(e)],
-      });
+      const newContact = this.createContact(e);
+      const newContactList = [...contacts, newContact];
+      this.setState({ contacts: newContactList });
     }
   };
 
