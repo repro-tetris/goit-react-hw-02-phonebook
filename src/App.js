@@ -2,7 +2,7 @@ import React from "react";
 import { v4 as uuidv4 } from "uuid";
 import ContactForm from "./components/ContactForm/ContactForm";
 import { Filter } from "./components/Filter/Filter";
-import { ContactList } from "./components/ContactList/ContactList";
+import { ContactList } from "./components/Contact";
 
 class App extends React.Component {
   state = {
